@@ -5,6 +5,7 @@ import os
 import pandas as pd
 from model import FOG as fog
 import random
+import matplotlib.pyplot as plt
 
 
 def sliding_window(data, window, overlap=0):
@@ -135,19 +136,61 @@ def x_numericalIntegration(x, sr):
     return (np.sum(x[0:-1]) + np.sum(x[1:])) / (2 * sr)
 
 
-def get_random_samples(X, y, n):
+def get_random_samples(X, y, count,n_frame):
     print("get random samples")
     X_result = []
     lengths_result = []
-    for index in range(0, n):
+    for index in range(0, count):
         i = random.randint(0, len(y) - 1)
-        while y[i] > 0 or i < 10:
+        while y[i] > 0 or i < n_frame:
             i = random.randint(0, len(y) - 1)
-        X_result.extend(np.array(X[i - 10:i, :]).tolist())
-        lengths_result.append(10)
+        X_result.extend(np.array(X[i - n_frame:i, :]).tolist())
+        lengths_result.append(n_frame)
     return X_result, lengths_result
 
 
-if __name__ == "__main__":
-    deal_with_0()
-    write_feature()
+def see_result_by_img(y_true, y_pred):
+    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, sharey=True)
+    xx = range(0, len(y_pred))
+    ax1.plot(xx, y_true, 'r*')
+    ax1.set_title("true")
+    ax2.plot(xx, y_pred, 'b*')
+    ax2.set_title("predict")
+    plt.show()
+
+
+def load_feature_by_user():
+    print("load_feature_by_user,return a list whose length 10")
+    # 1
+    feature_1 = pd.read_csv('./features/S01R01.txt', index_col=0)
+    feature_2 = pd.read_csv('./features/S01R02.txt', index_col=0)
+    feature_S01 = feature_1.append(feature_2)
+    # 2
+    feature_S02_1 = pd.read_csv('./features/S02R01.txt', index_col=0)
+    feature_S02_2 = pd.read_csv('./features/S02R02.txt', index_col=0)
+    feature_S02 = feature_S02_1.append(feature_S02_2)
+    # 3
+    feature_S03_1 = pd.read_csv('./features/S03R01.txt', index_col=0)
+    feature_S03_2 = pd.read_csv('./features/S03R02.txt', index_col=0)
+    feature_S03_3 = pd.read_csv('./features/S03R03.txt', index_col=0)
+    feature_S03 = feature_S03_1.append(feature_S03_2).append(feature_S03_3)
+    # 4
+    feature_S04 = pd.read_csv('./features/S04R01.txt', index_col=0)
+    # 5
+    feature_S05_1 = pd.read_csv('./features/S05R01.txt', index_col=0)
+    feature_S05_2 = pd.read_csv('./features/S05R02.txt', index_col=0)
+    feature_S05 = feature_S05_1.append(feature_S05_2)
+    # 6
+    feature_S06_1 = pd.read_csv('./features/S06R01.txt', index_col=0)
+    feature_S06_2 = pd.read_csv('./features/S06R02.txt', index_col=0)
+    feature_S06 = feature_S06_1.append(feature_S06_2)
+    # 7
+    feature_S07_1 = pd.read_csv('./features/S07R01.txt', index_col=0)
+    feature_S07_2 = pd.read_csv('./features/S07R02.txt', index_col=0)
+    feature_S07 = feature_S06_1.append(feature_S07_2)
+    # 8, 9, 10
+    feature_S08 = pd.read_csv('./features/S08R01.txt', index_col=0)
+    feature_S09 = pd.read_csv('./features/S09R01.txt', index_col=0)
+    feature_S10 = pd.read_csv('./features/S10R01.txt', index_col=0)
+    return [feature_S01, feature_S02, feature_S03, feature_S04, feature_S05, feature_S06, feature_S07, feature_S08,
+            feature_S09, feature_S10]

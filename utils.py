@@ -7,6 +7,9 @@ from model import FOG as fog
 import random
 import matplotlib.pyplot as plt
 
+window_length = 4
+step_length = 0.5
+
 
 def sliding_window(data, window, overlap=0):
     window = int(window)
@@ -37,18 +40,24 @@ def get_feature(frame):
     d_fft = np.fft.fft(d_mean, 256)
     d_1 = abs(d_fft * np.conj(d_fft)) / 256
     # d_mode = np.abs(d_fft) / 256
-    power = np.sum(d_1[0:127]) / 256
+    # power low
     PL = x_numericalIntegration(d_1[1:13], 64)
+    # Dominant Frequency
+    DF = np.argmax(d_1[1:33])
+    # Dominant Frequency Amplitude
+    DFA = np.max(d_1[1:33])
+
     PF = x_numericalIntegration(d_1[13:33], 64)
     if PL == 0:
-        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     TP = PL + PF
     FI = PF / PL
     mx = np.max(frame)
     mn = np.min(frame)
     sd = np.std(frame)
     var = np.var(frame)
-    return [f_mean, sd, var, power, mx, mn, power, PL, PF, TP, FI]
+    cov = sd / f_mean
+    return [f_mean, sd, var, cov, mx, mn, PL, DF, DFA, PF, TP, FI]
 
 
 # merge data in file_dir into one list
@@ -116,7 +125,7 @@ def save_fogs(fogs, file_name='./fogs.csv'):
 def get_features_by_file(filename):
     print("get_features_by_file:" + filename)
     raw_data = pd.read_csv(os.path.join('./ok_data', filename))
-    labels, frames = sliding_window(raw_data, window=64 * 4, overlap=3.5 * 64)
+    labels, frames = sliding_window(raw_data, window=64 * window_length, overlap=(window_length-step_length) * 64)
     features_with_label = []
     for index in range(0, len(frames)):
         feature = get_feature(frames[index])
@@ -136,7 +145,7 @@ def x_numericalIntegration(x, sr):
     return (np.sum(x[0:-1]) + np.sum(x[1:])) / (2 * sr)
 
 
-def get_random_samples(X, y, count,n_frame):
+def get_random_samples(X, y, count, n_frame):
     print("get random samples")
     X_result = []
     lengths_result = []
@@ -194,3 +203,6 @@ def load_feature_by_user():
     feature_S10 = pd.read_csv('./features/S10R01.txt', index_col=0)
     return [feature_S01, feature_S02, feature_S03, feature_S04, feature_S05, feature_S06, feature_S07, feature_S08,
             feature_S09, feature_S10]
+
+if __name__ == "__main__":
+    write_feature()

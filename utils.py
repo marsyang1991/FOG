@@ -6,14 +6,14 @@ import pandas as pd
 from model import FOG as fog
 import random
 import matplotlib.pyplot as plt
-import hmmlearn as hmm
+from hmmlearn import hmm
 
 import numpy as np
 import warnings
 from sklearn import metrics
 
-window_length = 4
-step_length = 2
+window_length = 1
+step_length = 0.5
 
 
 def sliding_window(data, window, overlap=0):
@@ -229,7 +229,7 @@ def print_result(cm):
     print("Specifity={}\tSensitivity={}".format(float(TN) / (TN + FP), float(TP) / (TP + FN)))
 
 
-def eva_gmmhmm(X_train, y_train, X_test, y_test, n_component=2, n_mix=10, n_sequence=6):
+def eva_gmmhmm(X_train, y_train, X_test, y_test, n_component=2, n_mix=10, n_sequence=2):
     X_all = X_train
     y_all = y_train
     X_hmm_1 = []
@@ -241,7 +241,7 @@ def eva_gmmhmm(X_train, y_train, X_test, y_test, n_component=2, n_mix=10, n_sequ
         cur = np.array(X_all[index - n:index, :]).tolist()
         if y_all[index] == 0:
             X_hmm_0.extend(cur)
-            lengths_hmm_1.append(0)
+            lengths_hmm_0.append(n)
         else:
             X_hmm_1.extend(cur)
             lengths_hmm_1.append(n)
@@ -272,14 +272,34 @@ def eva_gmmhmm(X_train, y_train, X_test, y_test, n_component=2, n_mix=10, n_sequ
     return cm
 
 
+def get_train_list(features, index):
+    result = pd.DataFrame([])
+    for ind in range(0, len(features)):
+        if ind == index:
+            continue
+        else:
+            if result.size == 0:
+                result = pd.DataFrame(features[ind])
+            else:
+                result.append(pd.DataFrame(features[ind]))
+    return result
+
+
 if __name__ == "__main__":
     # write_feature()
     warnings.filterwarnings("ignore")
     features = load_feature_by_user()
-    feature_train = pd.DataFrame(features[1]).append(pd.DataFrame(features[0]))
-    feature_test = pd.DataFrame(features[2])
-    X_train = np.array(feature_train.iloc[:, :-1])
-    y_train = np.array(feature_train.iloc[:, -1])
-    X_test = np.array(feature_test.iloc[:, :-1])
-    y_test = np.array(feature_test.iloc[:, -1])
-    eva_gmmhmm(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
+    cm = []
+    for index in range(0, len(features)):
+        feature_train = pd.DataFrame(get_train_list(features, index))
+        feature_test = pd.DataFrame(features[index])
+        X_train = np.array(feature_train.iloc[:, :-1])
+        y_train = np.array(feature_train.iloc[:, -1])
+        X_test = np.array(feature_test.iloc[:, :-1])
+        y_test = np.array(feature_test.iloc[:, -1])
+        n_component = 6
+        n_sequence = 12
+        print("n_compoment={}, n_sequence={}".format(n_component, n_sequence))
+        cm_t = eva_gmmhmm(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, n_component=n_component,
+                          n_sequence=n_sequence)
+        cm.append(cm_t)

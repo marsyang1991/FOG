@@ -6,9 +6,14 @@ import pandas as pd
 from model import FOG as fog
 import random
 import matplotlib.pyplot as plt
+import hmmlearn as hmm
+
+import numpy as np
+import warnings
+from sklearn import metrics
 
 window_length = 4
-step_length = 0.5
+step_length = 2
 
 
 def sliding_window(data, window, overlap=0):
@@ -24,7 +29,11 @@ def sliding_window(data, window, overlap=0):
             break
         temp = np.transpose(np.array(data.loc[start:end, 'ankle_vertical']))
         # ta = mode(data.loc[start:end, 'annotation']).mode[0]
-        ta = data.loc[end, 'annotation']
+        if (np.array(data.loc[start:end, 'annotation']) == 2).any():
+            ta = 2
+        else:
+            ta = 1
+        # ta1 = data.loc[end, 'annotation']
         labels.append(ta)
         items.append(temp)
         start += window - overlap
@@ -125,7 +134,7 @@ def save_fogs(fogs, file_name='./fogs.csv'):
 def get_features_by_file(filename):
     print("get_features_by_file:" + filename)
     raw_data = pd.read_csv(os.path.join('./ok_data', filename))
-    labels, frames = sliding_window(raw_data, window=64 * window_length, overlap=(window_length-step_length) * 64)
+    labels, frames = sliding_window(raw_data, window=64 * window_length, overlap=(window_length - step_length) * 64)
     features_with_label = []
     for index in range(0, len(frames)):
         feature = get_feature(frames[index])
@@ -173,36 +182,104 @@ def load_feature_by_user():
     # 1
     feature_1 = pd.read_csv('./features/S01R01.txt', index_col=0)
     feature_2 = pd.read_csv('./features/S01R02.txt', index_col=0)
-    feature_S01 = feature_1.append(feature_2)
+    feature_s01 = feature_1.append(feature_2)
     # 2
-    feature_S02_1 = pd.read_csv('./features/S02R01.txt', index_col=0)
-    feature_S02_2 = pd.read_csv('./features/S02R02.txt', index_col=0)
-    feature_S02 = feature_S02_1.append(feature_S02_2)
+    feature_s02_1 = pd.read_csv('./features/S02R01.txt', index_col=0)
+    feature_s02_2 = pd.read_csv('./features/S02R02.txt', index_col=0)
+    feature_s02 = feature_s02_1.append(feature_s02_2)
     # 3
-    feature_S03_1 = pd.read_csv('./features/S03R01.txt', index_col=0)
-    feature_S03_2 = pd.read_csv('./features/S03R02.txt', index_col=0)
-    feature_S03_3 = pd.read_csv('./features/S03R03.txt', index_col=0)
-    feature_S03 = feature_S03_1.append(feature_S03_2).append(feature_S03_3)
+    feature_s03_1 = pd.read_csv('./features/S03R01.txt', index_col=0)
+    feature_s03_2 = pd.read_csv('./features/S03R02.txt', index_col=0)
+    feature_s03_3 = pd.read_csv('./features/S03R03.txt', index_col=0)
+    feature_s03 = feature_s03_1.append(feature_s03_2).append(feature_s03_3)
     # 4
-    feature_S04 = pd.read_csv('./features/S04R01.txt', index_col=0)
+    feature_s04 = pd.read_csv('./features/S04R01.txt', index_col=0)
     # 5
-    feature_S05_1 = pd.read_csv('./features/S05R01.txt', index_col=0)
-    feature_S05_2 = pd.read_csv('./features/S05R02.txt', index_col=0)
-    feature_S05 = feature_S05_1.append(feature_S05_2)
+    feature_s05_1 = pd.read_csv('./features/S05R01.txt', index_col=0)
+    feature_s05_2 = pd.read_csv('./features/S05R02.txt', index_col=0)
+    feature_s05 = feature_s05_1.append(feature_s05_2)
     # 6
-    feature_S06_1 = pd.read_csv('./features/S06R01.txt', index_col=0)
-    feature_S06_2 = pd.read_csv('./features/S06R02.txt', index_col=0)
-    feature_S06 = feature_S06_1.append(feature_S06_2)
+    feature_s06_1 = pd.read_csv('./features/S06R01.txt', index_col=0)
+    feature_s06_2 = pd.read_csv('./features/S06R02.txt', index_col=0)
+    feature_s06 = feature_s06_1.append(feature_s06_2)
     # 7
-    feature_S07_1 = pd.read_csv('./features/S07R01.txt', index_col=0)
-    feature_S07_2 = pd.read_csv('./features/S07R02.txt', index_col=0)
-    feature_S07 = feature_S06_1.append(feature_S07_2)
+    feature_s07_1 = pd.read_csv('./features/S07R01.txt', index_col=0)
+    feature_s07_2 = pd.read_csv('./features/S07R02.txt', index_col=0)
+    feature_s07 = feature_s07_1.append(feature_s07_2)
     # 8, 9, 10
-    feature_S08 = pd.read_csv('./features/S08R01.txt', index_col=0)
-    feature_S09 = pd.read_csv('./features/S09R01.txt', index_col=0)
-    feature_S10 = pd.read_csv('./features/S10R01.txt', index_col=0)
-    return [feature_S01, feature_S02, feature_S03, feature_S04, feature_S05, feature_S06, feature_S07, feature_S08,
-            feature_S09, feature_S10]
+    feature_s08 = pd.read_csv('./features/S08R01.txt', index_col=0)
+    feature_s09 = pd.read_csv('./features/S09R01.txt', index_col=0)
+    feature_s10 = pd.read_csv('./features/S10R01.txt', index_col=0)
+    return [feature_s01, feature_s02, feature_s03, feature_s04, feature_s05, feature_s06, feature_s07, feature_s08,
+            feature_s09, feature_s10]
+
+
+def find_fog(seq):
+    diff = np.diff(seq)
+    diff_index = (diff != 0)
+    return len(diff[diff_index]) / 2
+
+
+def print_result(cm):
+    TP = cm[1, 1]
+    TN = cm[0, 0]
+    FP = cm[0, 1]
+    FN = cm[1, 0]
+    print cm
+    print("Specifity={}\tSensitivity={}".format(float(TN) / (TN + FP), float(TP) / (TP + FN)))
+
+
+def eva_gmmhmm(X_train, y_train, X_test, y_test, n_component=2, n_mix=10, n_sequence=6):
+    X_all = X_train
+    y_all = y_train
+    X_hmm_1 = []
+    X_hmm_0 = []
+    lengths_hmm_0 = []
+    lengths_hmm_1 = []
+    n = n_sequence
+    for index in range(n_sequence, len(y_all)):
+        cur = np.array(X_all[index - n:index, :]).tolist()
+        if y_all[index] == 0:
+            X_hmm_0.extend(cur)
+            lengths_hmm_1.append(0)
+        else:
+            X_hmm_1.extend(cur)
+            lengths_hmm_1.append(n)
+    # X_hmm_0, lengths_hmm_0 = get_random_samples(X_all, y_all, len(lengths_hmm), n)
+    hmm_0 = hmm.GMMHMM(n_components=n_component, n_mix=n_mix)
+    hmm_0.fit(X=X_hmm_0, lengths=lengths_hmm_0)
+    hmm_1 = hmm.GMMHMM(n_components=n_component, n_mix=n_mix)
+    hmm_1.fit(X=X_hmm_1, lengths=lengths_hmm_1)
+    y_true = []
+    y_pred = []
+    for index in range(0, X_test.shape[0]):
+        if index <= n:
+            sample = X_test[:index + 1, :]
+        else:
+            sample = X_test[index - n:index, :]
+        y_true.append(y_test[index])
+        result_1 = hmm_1.score(sample)
+        result_0 = hmm_0.score(sample)
+        if result_0 > result_1:
+            y_pred.append(0)
+        else:
+            y_pred.append(1)
+    cm = metrics.confusion_matrix(y_true=y_true, y_pred=y_pred)
+    see_result_by_img(y_true, y_pred)
+    print_result(cm)
+    print("true: {} fogs".format(find_fog(y_true)))
+    print("pred: {} fogs".format(find_fog(y_pred)))
+    return cm
+
 
 if __name__ == "__main__":
-    write_feature()
+    # write_feature()
+    warnings.filterwarnings("ignore")
+    features = load_feature_by_user()
+    feature_train = pd.DataFrame(features[1]).append(pd.DataFrame(features[0]))
+    feature_test = pd.DataFrame(features[2])
+    X_train = np.array(feature_train.iloc[:, :-1])
+    y_train = np.array(feature_train.iloc[:, -1])
+    X_test = np.array(feature_test.iloc[:, :-1])
+    y_test = np.array(feature_test.iloc[:, -1])
+    eva_gmmhmm(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)

@@ -1,9 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28cffa7d-b630-4b76-8d92-5898fef25850" name="Default" comment="">
+    <list default="true" id="28cffa7d-b630-4b76-8d92-5898fef25850" name="Default" comment="add a method load_feature_by_user">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CNN.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DNN.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RNN.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new_utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/preprocess_data.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readCuPidMat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testMarkov.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_tensorflow.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unsupervised_try.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/useless/Config.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/useless/Sliding_window.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/useless/preprocess_data.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/BaseHMM.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/base.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/base_v1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/base_v2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/base_v3.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/matlab/evaluation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/matlab/icews.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/matlab/icews_main.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/matlab/trainIOHMM.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/poisson_regression.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/util/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/util/extmath.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOHMM/util/logs.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TestHMM.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S01R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S01R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S02R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S02R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S03R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S03R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S03R03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S04R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S05R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S05R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S06R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S06R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S07R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S07R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S08R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S09R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_S10R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/feature_total" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S01R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S01R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S02R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S02R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S03R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S03R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S03R03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S04R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S05R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S05R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S06R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S06R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S07R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S07R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S08R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S09R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_S10R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/label_total" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S01R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S01R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S02R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S02R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S03R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S03R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S03R03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S04R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S05R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S05R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S06R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S06R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S07R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S07R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S08R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S09R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/dataset/S10R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/doc/baechlin_TITB_2010 - Wearable Assistant for Parkinsons Disease Patients With the Freezing of Gait Symptom (preprint).pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/doc/documentation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/doc/img/annotation.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/doc/img/device.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/doc/img/sketchOfPaths_landscape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/noFOG/S04R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/noFOG/S10R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/scripts/do_plot.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/scripts/do_test.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/scripts/x_countTxFx.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/scripts/x_fi.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_fog_release/scripts/x_numericalIntegration.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S01R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S01R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S02R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S02R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S03R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S03R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S03R03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S04R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S05R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S05R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S06R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S06R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S07R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S07R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S08R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S09R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/features/S10R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fog.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fogs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/0_fig_103.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/0_fig_176.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/0_fig_198.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/10_fig_1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/10_fig_171.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/10_fig_22.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/11_fig_158.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/11_fig_67.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/11_fig_92.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/12_fig_114.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/12_fig_129.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/12_fig_70.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/13_fig_13.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/13_fig_167.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/13_fig_174.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/14_fig_120.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/14_fig_154.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/14_fig_189.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/15_fig_119.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/15_fig_146.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/15_fig_82.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/16_fig_45.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/16_fig_66.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/16_fig_90.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/17_fig_145.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/17_fig_221.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/17_fig_86.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/18_fig_118.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/18_fig_21.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/18_fig_84.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/19_fig_215.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/19_fig_48.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/19_fig_99.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/1_fig_13.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/1_fig_193.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/1_fig_55.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/2_fig_138.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/2_fig_223.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/2_fig_4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/3_fig_149.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/3_fig_54.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/3_fig_85.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/4_fig_134.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/4_fig_175.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/4_fig_226.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/5_fig_122.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/5_fig_154.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/5_fig_181.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/6_fig_132.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/6_fig_139.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/6_fig_191.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/7_fig_198.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/7_fig_2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/7_fig_52.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/8_fig_218.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/8_fig_3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/8_fig_82.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/9_fig_173.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/9_fig_68.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S01R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S01R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S02R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S02R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S03R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S03R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S03R03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S04R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S05R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S05R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S06R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S06R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S07R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S07R02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S08R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S09R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ok_data/S10R01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.ipynb" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/demo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/HMMELM.iml" afterPath="$PROJECT_DIR$/.idea/HMMELM.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fog.ipynb" afterPath="$PROJECT_DIR$/fog.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GMMHMM.py" afterPath="$PROJECT_DIR$/GMMHMM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model.py" afterPath="$PROJECT_DIR$/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <ignored path="HMMELM.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,36 +213,53 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/HMMELM$preprocess_data.coverage" NAME="preprocess_data Coverage Results" MODIFIED="1513151631012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$Config.coverage" NAME="Config Coverage Results" MODIFIED="1513152281580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$utils.coverage" NAME="utils Coverage Results" MODIFIED="1499933164241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_TestIOHMM__2_.coverage" NAME="Nosetests in TestIOHMM (2) Coverage Results" MODIFIED="1480492945148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
-    <SUITE FILE_PATH="coverage/HMMELM$poisson_example.coverage" NAME="poisson_example Coverage Results" MODIFIED="1480488131249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
-    <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_TestIOHMM__1_.coverage" NAME="Nosetests in TestIOHMM (1) Coverage Results" MODIFIED="1480492771817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
-    <SUITE FILE_PATH="coverage/HMMELM$GenerateSyntheticData.coverage" NAME="GenerateSyntheticData Coverage Results" MODIFIED="1480487972858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master/example" />
-    <SUITE FILE_PATH="coverage/HMMELM$TestHMM.coverage" NAME="TestHMM Coverage Results" MODIFIED="1480399068488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HMMELM$poisson_regression.coverage" NAME="poisson_regression Coverage Results" MODIFIED="1480488180163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
+    <SUITE FILE_PATH="coverage/HMMELM$test.coverage" NAME="test Coverage Results" MODIFIED="1513498292764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$tetete.coverage" NAME="tetete Coverage Results" MODIFIED="1487775887853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$unsupervised_try.coverage" NAME="unsupervised_try Coverage Results" MODIFIED="1498736021838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$DNN.coverage" NAME="DNN Coverage Results" MODIFIED="1513156566427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$code.coverage" NAME="code Coverage Results" MODIFIED="1478059265111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/HMMELM$GMMHMM.coverage" NAME="GMMHMM Coverage Results" MODIFIED="1505376466358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HMMELM$TestIOHMM.coverage" NAME="TestIOHMM Coverage Results" MODIFIED="1480493471865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
+    <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_test.coverage" NAME="Nosetests in test Coverage Results" MODIFIED="1480493538560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
+    <SUITE FILE_PATH="coverage/HMMELM$readCuPidMat.coverage" NAME="readCuPidMat Coverage Results" MODIFIED="1498640189892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$RNN.coverage" NAME="RNN Coverage Results" MODIFIED="1513565660513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$GenerateSyntheticData.coverage" NAME="GenerateSyntheticData Coverage Results" MODIFIED="1480487972858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master/example" />
+    <SUITE FILE_PATH="coverage/FOG$utils.coverage" NAME="utils Coverage Results" MODIFIED="1481251841173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_TestIOHMM__3_.coverage" NAME="Nosetests in TestIOHMM (3) Coverage Results" MODIFIED="1480493113905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
     <SUITE FILE_PATH="coverage/HMMELM$code__2_.coverage" NAME="code (2) Coverage Results" MODIFIED="1479994790472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/HMMELM$utils.coverage" NAME="utils Coverage Results" MODIFIED="1480477513851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HMMELM$test.coverage" NAME="test Coverage Results" MODIFIED="1479956350563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HMMELM$Nosetest_TestIOHMM__test_compute_sufficient_static.coverage" NAME="Nosetest TestIOHMM._test_compute_sufficient_static Coverage Results" MODIFIED="1480491761096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
-    <SUITE FILE_PATH="coverage/HMMELM$code__1_.coverage" NAME="code (1) Coverage Results" MODIFIED="1479025300128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_test.coverage" NAME="Nosetests in test Coverage Results" MODIFIED="1480493538560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
-    <SUITE FILE_PATH="coverage/FOG$test.coverage" NAME="test Coverage Results" MODIFIED="1480567756763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HMMELM$code__3_.coverage" NAME="code (3) Coverage Results" MODIFIED="1480038513627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/HMMELM$a.coverage" NAME="a Coverage Results" MODIFIED="1480159561791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_TestIOHMM.coverage" NAME="Nosetests in TestIOHMM Coverage Results" MODIFIED="1480492080495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
-    <SUITE FILE_PATH="coverage/HMMELM$code.coverage" NAME="code Coverage Results" MODIFIED="1478059265111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/HMMELM$GMMHMM.coverage" NAME="GMMHMM Coverage Results" MODIFIED="1480477192396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$CNN.coverage" NAME="CNN Coverage Results" MODIFIED="1513343313280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$a.coverage" NAME="a Coverage Results" MODIFIED="1480159561791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$test_RNN.coverage" NAME="test_RNN Coverage Results" MODIFIED="1499738972757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$testMarkov.coverage" NAME="testMarkov Coverage Results" MODIFIED="1500024864460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$poisson_regression.coverage" NAME="poisson_regression Coverage Results" MODIFIED="1480488180163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
+    <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_testMarkov_py.coverage" NAME="Nosetests in testMarkov.py Coverage Results" MODIFIED="1499739305073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_HMMELM.coverage" NAME="Nosetests in HMMELM Coverage Results" MODIFIED="1481524335009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$Nosetests_in_TestIOHMM__1_.coverage" NAME="Nosetests in TestIOHMM (1) Coverage Results" MODIFIED="1480492771817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
+    <SUITE FILE_PATH="coverage/HMMELM$mailTest.coverage" NAME="mailTest Coverage Results" MODIFIED="1499930935192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$Nosetest_TestIOHMM__test_compute_sufficient_static.coverage" NAME="Nosetest TestIOHMM._test_compute_sufficient_static Coverage Results" MODIFIED="1480491761096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
+    <SUITE FILE_PATH="coverage/HMMELM$TestHMM.coverage" NAME="TestHMM Coverage Results" MODIFIED="1480399068488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$GMMHMM_xiaoyi.coverage" NAME="GMMHMM_xiaoyi Coverage Results" MODIFIED="1491443455727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$code__3_.coverage" NAME="code (3) Coverage Results" MODIFIED="1480038513627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/FOG$test.coverage" NAME="test Coverage Results" MODIFIED="1480567756763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HMMELM$code__1_.coverage" NAME="code (1) Coverage Results" MODIFIED="1479025300128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/HMMELM$poisson_example.coverage" NAME="poisson_example Coverage Results" MODIFIED="1480488131249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IOHMM-master" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -53,20 +267,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fog.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fog.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
+      <file leaf-file-name="demo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3090">
+              <caret line="421" column="30" lean-forward="false" selection-start-line="421" selection-start-column="29" selection-end-line="421" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#200#948#0" expanded="false" />
+                <element signature="e#991#1623#0" expanded="false" />
+                <element signature="e#1671#2348#0" expanded="false" />
+                <element signature="e#2392#3470#0" expanded="false" />
+                <element signature="e#3514#4559#0" expanded="false" />
+                <element signature="e#4605#5014#0" expanded="false" />
+                <element signature="e#5059#6016#0" expanded="false" />
+                <element signature="e#6796#7586#0" expanded="false" />
+                <element signature="e#7631#8742#0" expanded="false" />
+                <element signature="e#8807#9941#0" expanded="false" />
+                <element signature="e#9984#11715#0" expanded="false" />
+                <element signature="e#11779#12273#0" expanded="false" />
+                <element signature="e#12317#13822#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils.py">
+      <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-148">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="371">
+              <caret line="71" column="29" lean-forward="true" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CNN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1282">
+              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -84,23 +336,25 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dataset_fog_release/dataset/S01R01.txt" />
         <option value="$PROJECT_DIR$/dataset_fog_release/doc/documentation.html" />
         <option value="$PROJECT_DIR$/data/S01R01.txt" />
         <option value="$PROJECT_DIR$/data/feature_S06R01.txt" />
         <option value="$PROJECT_DIR$/Utils.py" />
-        <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/dataset_fog_release/scripts/do_test.m" />
         <option value="$PROJECT_DIR$/dataset_fog_release/scripts/x_countTxFx.m" />
         <option value="$PROJECT_DIR$/fogs.csv" />
         <option value="$PROJECT_DIR$/features/S01R01.txt" />
         <option value="$PROJECT_DIR$/a.py" />
         <option value="$PROJECT_DIR$/TestHMM.py" />
-        <option value="$PROJECT_DIR$/GMMHMM.py" />
         <option value="$PROJECT_DIR$/IOHMM.py" />
         <option value="$PROJECT_DIR$/IOHMM-master/example/GenerateSyntheticData.py" />
         <option value="$PROJECT_DIR$/IOHMM-master/example/base.py" />
@@ -109,10 +363,32 @@
         <option value="$PROJECT_DIR$/IOHMM-master/test.py" />
         <option value="$PROJECT_DIR$/IOHMM-master/TestIOHMM.py" />
         <option value="$PROJECT_DIR$/IOHMM/base.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/fog.ipynb" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/test.ipynb" />
+        <option value="$PROJECT_DIR$/fog.ipynb" />
+        <option value="$PROJECT_DIR$/tetete.py" />
+        <option value="$PROJECT_DIR$/GMMHMM_xiaoyi.py" />
+        <option value="$PROJECT_DIR$/ok_data/S01R01.txt" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/unsupervised_try.py" />
+        <option value="$PROJECT_DIR$/readCuPidMat" />
+        <option value="$PROJECT_DIR$/test_RNN.py" />
+        <option value="$PROJECT_DIR$/20170712.log" />
+        <option value="$PROJECT_DIR$/mailTest.py" />
+        <option value="$PROJECT_DIR$/dataset_fog_release/dataset/S01R01.txt" />
+        <option value="$PROJECT_DIR$/testMarkov.py" />
+        <option value="$PROJECT_DIR$/model.py" />
+        <option value="$PROJECT_DIR$/new_utils.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/GMMHMM.py" />
+        <option value="$PROJECT_DIR$/test_tensorflow.py" />
+        <option value="$PROJECT_DIR$/Untitled.ipynb" />
+        <option value="$PROJECT_DIR$/Sliding_window.py" />
+        <option value="$PROJECT_DIR$/DNN.py" />
+        <option value="$PROJECT_DIR$/preprocess_data.py" />
+        <option value="$PROJECT_DIR$/CNN.py" />
+        <option value="$PROJECT_DIR$/demo.py" />
+        <option value="$PROJECT_DIR$/RNN.py" />
+        <option value="$PROJECT_DIR$/Config.py" />
       </list>
     </option>
   </component>
@@ -123,10 +399,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -147,16 +421,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -172,96 +437,85 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HMMELM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HMMELM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/IOHMM-master" />
+      <recent name="$PROJECT_DIR$/useless" />
+      <recent name="$PROJECT_DIR$/data_seq" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data1" />
+      <recent name="$PROJECT_DIR$/IOHMM-master" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/IOHMM-master/example" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data1" />
+      <recent name="$PROJECT_DIR$/IOHMM-master/example" />
       <recent name="$PROJECT_DIR$/dataset_fog_release/dataset" />
       <recent name="$PROJECT_DIR$/dataset_fog_release/noFOG" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration default="false" name="Nosetests in test" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../env/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/IOHMM" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HMMELM" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/IOHMM-master/test.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Nosetests in TestIOHMM" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/IOHMM" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HMMELM" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/IOHMM-master/test.py" />
-      <option name="CLASS_NAME" value="TestIOHMM" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestIOHMM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.RNN">
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/IOHMM-master" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HMMELM" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/IOHMM-master/TestIOHMM.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="DNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -274,9 +528,67 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HMMELM" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DNN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="preprocess_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HMMELM" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/useless/preprocess_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Config" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HMMELM" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/useless/Config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HMMELM" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -297,6 +609,19 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -346,6 +671,7 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
@@ -361,23 +687,7 @@
       <module name="HMMELM" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
+    <configuration default="true" type="docs" factoryName="Sphinx task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -388,13 +698,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HMMELM" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -428,15 +752,10 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HMMELM" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -450,19 +769,85 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HMMELM" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HMMELM" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testMarkov" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HMMELM" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testMarkov.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CNN" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HMMELM" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CNN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Python.testMarkov" />
+      <item index="1" class="java.lang.String" itemvalue="Python.CNN" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.DNN" />
+      <item index="4" class="java.lang.String" itemvalue="Python.preprocess_data" />
+      <item index="5" class="java.lang.String" itemvalue="Python.Config" />
+      <item index="6" class="java.lang.String" itemvalue="Python.RNN" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.RNN" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DNN" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Config" />
+        <item index="4" class="java.lang.String" itemvalue="Python.preprocess_data" />
+      </list>
+    </recent_temporary>
+    <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -480,31 +865,15 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in TestIOHMM" />
-      <item index="2" class="java.lang.String" itemvalue="Python.TestIOHMM" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test" />
-    </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.TestIOHMM" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in TestIOHMM" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in TestIOHMM" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_INHERITED" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -524,31 +893,17 @@
       <option name="project" value="LOCAL" />
       <updated>1480580762508</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add a method load_feature_by_user">
+      <created>1480585346829</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480585346829</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_in_TestIOHMM_(1) - 2016.11.30 at 15h 59m 32s.xml">
-      <configuration name="Nosetests in TestIOHMM (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_TestIOHMM_(2) - 2016.11.30 at 16h 02m 25s.xml">
-      <configuration name="Nosetests in TestIOHMM (2)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_TestIOHMM_(3) - 2016.11.30 at 16h 03m 08s.xml">
-      <configuration name="Nosetests in TestIOHMM (3)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_TestIOHMM_(3) - 2016.11.30 at 16h 05m 15s.xml">
-      <configuration name="Nosetests in TestIOHMM (3)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_test - 2016.11.30 at 15h 56m 41s.xml">
-      <configuration name="Nosetests in test" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_test - 2016.11.30 at 16h 02m 19s.xml">
-      <configuration name="Nosetests in test" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_test - 2016.11.30 at 16h 12m 10s.xml">
-      <configuration name="Nosetests in test" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_in_test - 2016.11.30 at 16h 12m 15s.xml">
       <configuration name="Nosetests in test" configurationId="tests" />
     </history-entry>
@@ -558,31 +913,91 @@
     <history-entry file="Nosetests_in_test - 2016.11.30 at 16h 12m 18s.xml">
       <configuration name="Nosetests in test" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 09m 39s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 10m 03s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 11m 00s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 12m 37s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 12m 52s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 13m 13s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testMarkov_py - 2017.07.11 at 10h 15m 06s.xml">
+      <configuration name="Nosetests in testMarkov.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297769" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20396039" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5021299" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11302083" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22178218" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43214864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124657534" sideWeight="0.49030694" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11470113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1720517" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30891088" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17260274" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19108911" sideWeight="0.4978701" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20396039" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5021299" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17260274" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23990306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12475248" sideWeight="0.49030694" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17124394" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19108911" sideWeight="0.4978701" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1720517" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30891088" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.m" />
@@ -604,287 +1019,276 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils.py</url>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="28" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features/S02R02.txt">
+    <entry file="file://$PROJECT_DIR$/test.ipynb" />
+    <entry file="file:///Library/Python/2.7/site-packages/pandas/core/frame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18663">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        <state relative-caret-position="328">
+          <caret line="2056" column="44" lean-forward="true" selection-start-line="2056" selection-start-column="44" selection-end-line="2056" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/S01R02.txt">
+    <entry file="file://$PROJECT_DIR$/dataset_fog_release/dataset/S05R01.txt" />
+    <entry file="file:///Library/Python/2.7/site-packages/pandas/core/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="249">
+          <caret line="1383" column="0" lean-forward="false" selection-start-line="1383" selection-start-column="0" selection-end-line="1383" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+    <entry file="file://$PROJECT_DIR$/ok_data/readme.txt" />
+    <entry file="file:///Library/Python/2.7/site-packages/sklearn/utils/validation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="945" column="0" selection-start-line="945" selection-start-column="0" selection-end-line="945" selection-end-column="0" />
+        <state relative-caret-position="265">
+          <caret line="415" column="0" lean-forward="false" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fogs.csv">
+    <entry file="file://$PROJECT_DIR$/resume.html" />
+    <entry file="file://$PROJECT_DIR$/1.log" />
+    <entry file="file://$PROJECT_DIR$/2.log" />
+    <entry file="file://$PROJECT_DIR$/20170712.log" />
+    <entry file="file://$PROJECT_DIR$/20170713.log" />
+    <entry file="file:///Library/Python/2.7/site-packages/hmmlearn/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="590">
+          <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset_fog_release/scripts/x_numericalIntegration.m">
+    <entry file="file://$PROJECT_DIR$/dataset_fog_release/dataset/S01R01.txt" />
+    <entry file="file://$PROJECT_DIR$/ok_data/S01R02.txt" />
+    <entry file="file://$PROJECT_DIR$/dataset_fog_release/doc/documentation.html" />
+    <entry file="file://$PROJECT_DIR$/ok_data/S02R01.txt" />
+    <entry file="file://$PROJECT_DIR$/features/S01R01.txt" />
+    <entry file="file://$PROJECT_DIR$/mailTest.py" />
+    <entry file="file://$PROJECT_DIR$/test_RNN.py" />
+    <entry file="file://$PROJECT_DIR$/resume.htmlresume.html" />
+    <entry file="file://$PROJECT_DIR$/unsupervised_try.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="41" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="41" />
+        <state relative-caret-position="210">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a.py" />
-    <entry file="file://$USER_HOME$/Downloads/ICCV2015_Brain4Cars-master/train/IOhmmFit.m" />
-    <entry file="file://$PROJECT_DIR$/features/S02R01.txt">
+    <entry file="file://$PROJECT_DIR$/readCuPidMat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestHMM.py">
+    <entry file="file://$PROJECT_DIR$/testMarkov.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="390">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S01R02.txt">
+    <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70296">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset_fog_release/scripts/x_fi.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/S03R01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6672">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S01R01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="50247" column="48" selection-start-line="50247" selection-start-column="48" selection-end-line="50247" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S03R01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2459">
-          <caret line="2253" column="46" selection-start-line="2253" selection-start-column="46" selection-end-line="2253" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S03R03.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S03R02.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S02R01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ok_data/S02R02.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset_fog_release/dataset/S04R01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/util/logs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/base_v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3384">
-          <caret line="197" column="55" selection-start-line="197" selection-start-column="55" selection-end-line="197" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM-master/example/base.py" />
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/__init__.py" />
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/main.py" />
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/-2125986627/_functools.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/matlab/icews_main.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/matlab/icews.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/matlab/evaluation.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/README.md" />
-    <entry file="file:///Library/Python/2.7/site-packages/nose/importer.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM-master/TestIOHMM.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/LICENSE" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/GMHMM.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/GenerateSyntheticData.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/poisson_example.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/test_opt.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/poisson_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/BaseHMM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/S01R01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="1900" column="94" selection-start-line="1900" selection-start-column="94" selection-end-line="1900" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="90" column="47" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/-2125986627/__builtin__.py" />
-    <entry file="file://$PROJECT_DIR$/IOHMM/base_v3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/base_v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="340" column="8" selection-start-line="340" selection-start-column="8" selection-end-line="340" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOHMM/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="537" column="23" selection-start-line="537" selection-start-column="23" selection-end-line="537" selection-end-column="23" />
+        <state relative-caret-position="616">
+          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GMMHMM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#88#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="616">
+          <caret line="94" column="1" lean-forward="false" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/ok_data/S01R01.txt" />
+    <entry file="file://$PROJECT_DIR$/S01_R01_1.txt" />
+    <entry file="file://$PROJECT_DIR$/new_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fog.ipynb">
+    <entry file="file://$PROJECT_DIR$/S01_R01_0.txt" />
+    <entry file="file://$PROJECT_DIR$/data_seq/S10R011.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_seq/S10R010.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_seq/S05R011.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/lib/python2.7/site-packages/tensorflow/python/framework/common_shapes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1928">
+          <caret line="686" column="69" lean-forward="true" selection-start-line="686" selection-start-column="69" selection-end-line="686" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_seq/S01R010.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tensorflow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7590">
+          <caret line="256" column="15" lean-forward="false" selection-start-line="256" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_seq/S09R010.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Untitled.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
+    <entry file="file://$PROJECT_DIR$/../env/lib/python2.7/site-packages/numpy/core/shape_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="853">
+          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/useless/preprocess_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocess_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="117" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/lib/python2.7/site-packages/numpy/lib/stride_tricks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/useless/Config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/useless/Sliding_window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/lib/python2.7/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="1525" column="0" lean-forward="false" selection-start-line="1525" selection-start-column="0" selection-end-line="1525" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/lib/python2.7/site-packages/keras/engine/topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="621" column="0" lean-forward="false" selection-start-line="621" selection-start-column="0" selection-end-line="621" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3090">
+          <caret line="421" column="30" lean-forward="false" selection-start-line="421" selection-start-column="29" selection-end-line="421" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#200#948#0" expanded="false" />
+            <element signature="e#991#1623#0" expanded="false" />
+            <element signature="e#1671#2348#0" expanded="false" />
+            <element signature="e#2392#3470#0" expanded="false" />
+            <element signature="e#3514#4559#0" expanded="false" />
+            <element signature="e#4605#5014#0" expanded="false" />
+            <element signature="e#5059#6016#0" expanded="false" />
+            <element signature="e#6796#7586#0" expanded="false" />
+            <element signature="e#7631#8742#0" expanded="false" />
+            <element signature="e#8807#9941#0" expanded="false" />
+            <element signature="e#9984#11715#0" expanded="false" />
+            <element signature="e#11779#12273#0" expanded="false" />
+            <element signature="e#12317#13822#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1282">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="71" column="29" lean-forward="true" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
           <folding />
         </state>
       </provider>

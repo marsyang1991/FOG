@@ -1,68 +1,134 @@
 # coding = utf-8
 import numpy as np
-from scipy.stats import mode
 import os
 import pandas as pd
-from model import FOG as fog
 import random
-import matplotlib.pyplot as plt
 
 
 def sliding_window(data, window, overlap=0):
+    """ 
+    Segment a sequence data by a sliding window.
+
+    :param data: a sequence. unit:sample point
+    :param window: the length of th window.unit: sample point
+    :param overlap: the overlap between the jointly window, default 0.
+    :return: frames, shape is [,128,11],column_name=['timestamp','ankle_x','ankle_y','ankle_z','thigh_x','thigh_y','thigh_z','trunk_x','trunk_y','trunk_z','annotation']
+    """
     window = int(window)
     overlap = int(overlap)
     length = len(data)
     start = 0
     end = start + window - 1
     items = []
-    labels = []
     while end < length:
         if end >= length:
             break
-        temp = np.transpose(np.array(data.loc[start:end, 'ankle_vertical']))
-        # ta = mode(data.loc[start:end, 'annotation']).mode[0]
-        ta = data.loc[end, 'annotation']
-        labels.append(ta)
-        items.append(temp)
+        temp = np.array(data[start:end, :])
+        if check_sequence(np.array(temp), 1000 / 64):
+            items.append(temp)
         start += window - overlap
         end = start + window - 1
-    return labels, items
+    return items
 
 
-# extract features from data frame
-def get_feature(frame):
-    # print pd.DataFrame(frame).shape
-    f_mean = np.mean(frame)
-    d_mean = frame - np.mean(frame)
-    d_fft = np.fft.fft(d_mean, 256)
-    d_1 = abs(d_fft * np.conj(d_fft)) / 256
-    # d_mode = np.abs(d_fft) / 256
-    power = np.sum(d_1[0:127]) / 256
-    PL = x_numericalIntegration(d_1[1:13], 64)
-    PF = x_numericalIntegration(d_1[13:33], 64)
-    if PL == 0:
-        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    TP = PL + PF
-    FI = PF / PL
-    mx = np.max(frame)
-    mn = np.min(frame)
-    sd = np.std(frame)
-    var = np.var(frame)
-    return [f_mean, sd, var, power, mx, mn, power, PL, PF, TP, FI]
+def make_data_for_rnn(frame):
+    """
+    put a frame to a 2-dimensional matrix to apply rnn
+
+    :param frame: 
+    :return: 
+    """
 
 
-# merge data in file_dir into one list
+def check_sequence(data, mtime):
+    """ 
+    Check if the data is a sequence by its timestamp data[:,0] after abandoning some samples whose label is 0.
+
+    :param data:  a sequence data
+    :param mtime: the sampling frequency,hz
+    :return: Boolean, True or False
+    """
+    interval = data[1:, 0] - data[0:-1, 0]
+    for item in interval:
+        if item > mtime * 2:
+            # print('Non-sequence occur:', item)
+            return False
+    return True
+
+
+def get_feature(frame, col_range):
+    """
+    Extract features from data frame
+
+    :param frame: the data frame from the function sliding_window and the shape is [128,11], first column is timestamp and the last one is annotation.
+    :param col_range: the columns that features come from
+    :return: [timestamp, features, label]
+    """
+
+    timestamp = frame[-1, 0]
+    label = frame[-1, -1]
+    features = [timestamp]
+    for i in col_range:
+        c_data = np.array(frame[:, i])
+        c_data = c_data * 0.001
+        f_mean = np.mean(c_data)
+        d_mean = c_data - np.mean(c_data)
+        mx = np.max(c_data)
+        mn = np.min(c_data)
+        if mx == mn:
+            return -1
+        d_fft = np.fft.fft(d_mean, 128)
+        d_1 = abs(d_fft * np.conj(d_fft)) / 128
+        # d_mode = np.abs(d_fft) / 256
+        # power low
+        # PL = x_numericalIntegration(d_1[1:13], 64)
+        PL = np.sum(d_1[1:6])
+        # Dominant Frequency
+        DF = np.argmax(d_1[1:33])
+        # Dominant Frequency Amplitude
+        DFA = np.max(d_1[1:33])
+        # PF = x_numericalIntegration(d_1[13:33], 64)
+        PF = np.sum(d_1[7:16])
+        TP = PL + PF
+        FI = PF / PL
+        sd = np.std(c_data)
+        var = np.var(c_data)
+        t_feature = [f_mean, sd, var, mx, mn, PL, TP, FI]
+        features.extend(t_feature)
+    features.append(label)
+    return features
+
+
 def get_all_data_from_dir(file_dir):
-    list = os.listdir(file_dir)
-    datas = []
-    for file in list:
-        data = pd.read_csv(os.path.join(file_dir, file))
-        datas.append(data)
-    return datas
+    """
+    Read all the data files in the given direction.
+
+    :param file_dir: The data files' direction, for example './ok_data'
+    :return: A 2-dimensional data list
+    """
+    m_list = os.listdir(file_dir)
+    all_data = []
+    for files in m_list:
+        data = pd.read_csv(os.path.join(file_dir, files))
+        all_data.append(data)
+    return all_data
 
 
-# delete the annotation 0 and saved into the direction "ok_data" and keep the original file name
+def read_data_from(file_path):
+    """
+    Read the data from the given path.
+
+    :param file_path: The data file's path
+    :reture: A data list
+    """
+
+    return np.array(pd.read_csv(file_path))
+
+
 def deal_with_0():
+    """
+    Delete the annotation 0 and saved into the direction "ok_data" and keep the original file name.
+    """
     file_dir = './dataset_fog_release/dataset/'
     file_list = os.listdir(file_dir)
     for file in file_list:
@@ -75,122 +141,122 @@ def deal_with_0():
         print('deal_with_0: {}, data length:{}'.format(file, temp.shape))
 
 
-# find fog in raw data
-def extract_fogs(data, file_name=""):
-    start = 0
-    in_fog = False
-    fogs = []
-    for index in range(0, data.shape[0]):
-        label = data.loc[index, 'annotation']
-        if label == 0:
-            continue
-        if label == 2 and not in_fog:
-            start = index
-            in_fog = True
-        if label == 1 and in_fog:
-            end = index
-            new_fog = fog(start, end)
-            fogs.append(new_fog)
-            in_fog = False
-    if len(fogs) < 1:
-        return []
-    for item in fogs:
-        dd = data.iloc[item.start:item.end, :]
-        item.set_data(dd)
-        item.set_file_name(file_name)
-    return fogs
-
-
-# save fogs into a file
-def save_fogs(fogs, file_name='./fogs.csv'):
-    ll = []
-    for item in fogs:
-        temp = [item.file_name, item.start_fog, item.end_fog]
-        ll.append(temp)
-    ll_df = pd.DataFrame(ll)
-    ll_df.columns = ['file_name', 'start', 'end']
-    ll_df.to_csv(file_name)
-
-
-# for the certain raw_data set, segment into frames and extracted features
-def get_features_by_file(filename):
-    print("get_features_by_file:" + filename)
-    raw_data = pd.read_csv(os.path.join('./ok_data', filename))
-    labels, frames = sliding_window(raw_data, window=64 * 4, overlap=3.5 * 64)
-    features_with_label = []
-    for index in range(0, len(frames)):
-        feature = get_feature(frames[index])
-        label = labels[index] - 1
-        feature.append(label)
-        features_with_label.append(feature)
-    pd.DataFrame(features_with_label).to_csv(os.path.join('./features', filename))
-
-
-def write_feature():
-    file_list = os.listdir('./ok_data')
-    for file in file_list:
-        get_features_by_file(file)
-
-
 def x_numericalIntegration(x, sr):
+    """
+    computing the summed power of frequency bins.
+
+    :param x: the frequency bins
+    :param sr: the sampling frequency
+    :return: the summed power
+    """
     return (np.sum(x[0:-1]) + np.sum(x[1:])) / (2 * sr)
 
 
-def get_random_samples(X, y, count,n_frame):
-    print("get random samples")
-    X_result = []
-    lengths_result = []
-    for index in range(0, count):
-        i = random.randint(0, len(y) - 1)
-        while y[i] > 0 or i < n_frame:
-            i = random.randint(0, len(y) - 1)
-        X_result.extend(np.array(X[i - n_frame:i, :]).tolist())
-        lengths_result.append(n_frame)
-    return X_result, lengths_result
+def print_result(cm):
+    """
+    Print the specificity and sensitivity based on the confuse matrix.
+
+    :param cm: confuse matrix
+    :return: a dict containing 'specificity' and 'sensitivity'
+    """
+    TP = cm[1, 1]
+    TN = cm[0, 0]
+    FP = cm[1, 0]
+    FN = cm[0, 1]
+    print("Specifity={}\tSensitivity={}".format(float(TN) / (TN + FP), float(TP) / (TP + FN)))
+    return {"specificity": float(TN) / (TN + FP), 'sensitivity': float(TP) / (TP + FN)}
 
 
-def see_result_by_img(y_true, y_pred):
-    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, sharey=True)
-    xx = range(0, len(y_pred))
-    ax1.plot(xx, y_true, 'r*')
-    ax1.set_title("true")
-    ax2.plot(xx, y_pred, 'b*')
-    ax2.set_title("predict")
-    plt.show()
+def float_range(start, stop, steps):
+    """ 
+    Computes a range of floating value.
+
+    :param start:  Start value.
+    :param stop: End value.
+    :param steps: Number of values
+    :return: A list of floats
+    """
+    return [start + float(i) * (stop - start) / (float(steps) - 1) for i in range(steps)]
 
 
-def load_feature_by_user():
-    print("load_feature_by_user,return a list whose length 10")
-    # 1
-    feature_1 = pd.read_csv('./features/S01R01.txt', index_col=0)
-    feature_2 = pd.read_csv('./features/S01R02.txt', index_col=0)
-    feature_S01 = feature_1.append(feature_2)
-    # 2
-    feature_S02_1 = pd.read_csv('./features/S02R01.txt', index_col=0)
-    feature_S02_2 = pd.read_csv('./features/S02R02.txt', index_col=0)
-    feature_S02 = feature_S02_1.append(feature_S02_2)
-    # 3
-    feature_S03_1 = pd.read_csv('./features/S03R01.txt', index_col=0)
-    feature_S03_2 = pd.read_csv('./features/S03R02.txt', index_col=0)
-    feature_S03_3 = pd.read_csv('./features/S03R03.txt', index_col=0)
-    feature_S03 = feature_S03_1.append(feature_S03_2).append(feature_S03_3)
-    # 4
-    feature_S04 = pd.read_csv('./features/S04R01.txt', index_col=0)
-    # 5
-    feature_S05_1 = pd.read_csv('./features/S05R01.txt', index_col=0)
-    feature_S05_2 = pd.read_csv('./features/S05R02.txt', index_col=0)
-    feature_S05 = feature_S05_1.append(feature_S05_2)
-    # 6
-    feature_S06_1 = pd.read_csv('./features/S06R01.txt', index_col=0)
-    feature_S06_2 = pd.read_csv('./features/S06R02.txt', index_col=0)
-    feature_S06 = feature_S06_1.append(feature_S06_2)
-    # 7
-    feature_S07_1 = pd.read_csv('./features/S07R01.txt', index_col=0)
-    feature_S07_2 = pd.read_csv('./features/S07R02.txt', index_col=0)
-    feature_S07 = feature_S06_1.append(feature_S07_2)
-    # 8, 9, 10
-    feature_S08 = pd.read_csv('./features/S08R01.txt', index_col=0)
-    feature_S09 = pd.read_csv('./features/S09R01.txt', index_col=0)
-    feature_S10 = pd.read_csv('./features/S10R01.txt', index_col=0)
-    return [feature_S01, feature_S02, feature_S03, feature_S04, feature_S05, feature_S06, feature_S07, feature_S08,
-            feature_S09, feature_S10]
+def find_fog(Y):
+    """
+    Find the indices of fogs.
+
+    :param Y: the annotation list
+    :return: A dict contain start points and end points
+    """
+    start = []
+    end = []
+    delta = Y[1:] - Y[:-1]
+    for i in range(len(delta)):
+        if delta[i] > 0:
+            start.append(i)
+        else:
+            if delta[i] < 0:
+                end.append(i)
+    start = np.array(start)
+    end = np.array(end)
+    start = start + 1
+    return {"start": start, "end": end}
+
+
+def down_sampling(Y, n):
+    """
+    Down sampling the data to keep the classes balance.
+
+    :param Y: the imbalance annotation list
+    :param n: the number that down to
+    :return: balanced indices list
+    """
+    down_set = np.array(random.sample(Y, n))
+    return down_set
+
+
+def abandon_pre_fog(Y, pre_length):
+    """
+    Abandon the data during the length-time before FOG, to make the normal locomotion's data more pure.
+
+    :param Y: the label list
+    :param pre_length: the length of pre-fog(unit: frame)
+    :return: the indices of fog, pre_fog and normal
+    """
+    fogs = find_fog(Y)
+    fog_starts = fogs['start']
+    fog_ends = fogs['end']
+    fog_indices = []
+    pre_fog_indices = []
+    if fog_starts[0] - pre_length > 0:
+        normal_indices = range(0, fog_starts[0] - pre_length)
+    else:
+        normal_indices = []
+    for i in range(len(fog_starts)):
+        fog_indices.extend(range(fog_starts[i], fog_ends[i] + 1))
+        pre_fog_indices.extend(range(fog_starts[i] - pre_length, fog_starts[i]))
+        if i < len(fog_starts) - 1 and fog_ends[i] + pre_length < fog_starts[i + 1] - pre_length:
+            normal_indices.extend(range(fog_ends[i] + pre_length, fog_starts[i + 1] - pre_length))
+    if fog_ends[-1] + pre_length < len(Y):
+        normal_indices.extend(range(fog_ends[-1] + pre_length, len(Y)))
+    return {'fog_indices': fog_indices, "pre_fog_indices": pre_fog_indices, "normal_indices": normal_indices}
+
+
+def get_sequence_data(x, indices, length, time):
+    s_data = []
+    nums = []
+    for i in range(len(indices)):
+        if indices[i] > length:
+            temp = x[indices[i] - length:indices[i], 1:]
+            if check_sequence(x[indices[i] - length:indices[i], :], time):
+                s_data.extend(temp)
+                nums.append(length)
+            else:
+                print(x[indices[i] - length:indices[i], 0])
+    return {'data': s_data, 'lengths': nums}
+
+
+def one_hot(y):
+    y_one_hot = np.zeros([y.shape[0], 2])
+    for i in range(y_one_hot.shape[0]):
+        idx = y[i][0]
+        y_one_hot[i][idx] = 1
+    return y_one_hot
